@@ -9,7 +9,7 @@
 - JBOSS 설치
    - 기동 옵션
    - Management Console & CLI Console
-- Labs02_01 : JBOSS EAP 6 설치 
+- [Labs02_01 : EAP 6 설치](Labs02_01.md)
 
 ## 3. Configuration EAP
  - Directory Structure
