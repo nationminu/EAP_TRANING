@@ -5,7 +5,7 @@ DATE=`date +%Y%m%d_%H%M%S`
 export JBOSS_HOME=/jboss/was/jboss-eap-6.4
 export DOMAIN_BASE=/jboss/domains
 export SERVER_NAME=simple
-export JBOSS_LOG_DIR=$DOMAIN_BASE/$SERVER_NAME
+# export JBOSS_LOG_DIR=$DOMAIN_BASE/$SERVER_NAME
 
 if [ e$JBOSS_LOG_DIR = "e" ]
 then
@@ -14,7 +14,7 @@ fi
 
 if [ e$JBOSS_LOG_DIR != "e" ]
 then
-export JBOSS_LOG_DIR="$JBOSS_LOG_DIR/$SERVER_NAME"
+export JBOSS_LOG_DIR="$JBOSS_LOG_DIR"
 fi
 
 
