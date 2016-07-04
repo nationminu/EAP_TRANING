@@ -18,9 +18,9 @@
  - Configration File
    - standalone.xml 
    - domain.xml
- - Labs03_01 : JBOSS EAP 6 고급 설치 - Standalone
- - Labs03_02 : Management Console
- - Labs03_03 : Management Options
+ - Overview of CLI
+ - [Labs03_01 : Management Console (AJP 설정)](Labs03_01.md)
+ - [Labs03_02 : Using CLI (AJP 설정)](Labs03_02.md)
  
 ## 4. Deploying
  - Application Deploy
