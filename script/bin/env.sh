@@ -2,10 +2,10 @@
 DATE=`date +%Y%m%d_%H%M%S`
 
 ##### JBOSS Directory Setup #####
-export JBOSS_HOME=/home/jboss/jboss-eap-6.4
-export DOMAIN_BASE=/home/jboss/domains
-export SERVER_NAME=SIMPLE
-export JBOSS_LOG_DIR=/jb_log/was
+export JBOSS_HOME=/jboss/was/jboss-eap-6.4
+export DOMAIN_BASE=/jboss/domains
+export SERVER_NAME=simple
+export JBOSS_LOG_DIR=$DOMAIN_BASE/$SERVER_NAME
 
 if [ e$JBOSS_LOG_DIR = "e" ]
 then
@@ -20,7 +20,7 @@ fi
 
 ##### Configration File #####
 #export CONFIG_FILE=standalone-full-ha.xml
-export CONFIG_FILE=standalone-ha.xml
+export CONFIG_FILE=standalone.xml
 
 export HOST_NAME=`/bin/hostname`
 export NODE_NAME=${SERVER_NAME}
@@ -30,7 +30,7 @@ export PORT_OFFSET=0
 export JBOSS_USER=jboss
 
 ##### Bind Address #####
-export BIND_ADDR=172.16.167.10
+export BIND_ADDR=192.168.56.101
 
 export MULTICAST_ADDR=231.0.0.1
 export MULTICAST_PORT=55200
