@@ -1,0 +1,21 @@
+keytool -genseckey -alias vault -keystore vault.keystore -storetype jceks -keyalg AES -keysize 128 -storepass jboss -keypass jboss -dname "CN=Picketbox vault,OU=picketbox,O=JBoss,L=SEOUL,ST=KR,C=KR"
+
+./vault.sh
+
+<vault>
+  <vault-option name="KEYSTORE_URL" value="/home/ssong/jboss/domains/PGPAY01/bin/vault/vault.keystore"/>
+  <vault-option name="KEYSTORE_PASSWORD" value="MASK-2G6sZvrsAOtzMK3deGFpcM"/>
+  <vault-option name="KEYSTORE_ALIAS" value="vault"/>
+  <vault-option name="SALT" value="12345678"/>
+  <vault-option name="ITERATION_COUNT" value="50"/>
+  <vault-option name="ENC_FILE_DIR" value="/home/ssong/jboss/domains/PGPAY01/bin/vault/"/>
+</vault>
+
+
+/core-service=vault:add(vault-options={"KEYSTORE_URL" => "/home/ssong/jboss/domains/PGPAY01/bin/vault/vault.keystore","KEYSTORE_PASSWORD" => "MASK-2G6sZvrsAOtzMK3deGFpcM","KEYSTORE_ALIAS" => "vault","SALT" => "12345678","ITERATION_COUNT" => "50","ENC_FILE_DIR" => "/home/ssong/jboss/domains/PGPAY01/bin/vault/"}
+
+./vault.sh
+
+VAULT::ecryptionPassword::ecryptionPassword::1
+VAULT::encrytionUsername::encrytionUsername::1
+

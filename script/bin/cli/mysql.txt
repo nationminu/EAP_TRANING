@@ -1,0 +1,31 @@
+<datasource jndi-name="java:jboss/datasources/jpetstore" pool-name="jpetstore" enabled="true" use-ccm="true" statistics-enabled="true">
+                    <connection-url>jdbc:mysql://172.16.167.2:3306/jpetstore?connectTimeout=10000&amp;socketTimeout=10000</connection-url>
+                    <driver-class>com.mysql.jdbc.Driver</driver-class>
+                    <driver>mysql</driver>
+                    <pool>
+                        <min-pool-size>20</min-pool-size>
+                        <max-pool-size>20</max-pool-size>
+                        <prefill>true</prefill>
+                        <use-strict-min>true</use-strict-min>
+                    </pool>
+                    <security>
+                        <user-name>${VAULT::encrytionUsername::encrytionUsername::1}</user-name>
+                        <password>${VAULT::ecryptionPassword::ecryptionPassword::1}</password>
+                    </security>
+                    <validation>
+                        <valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker"/>
+                        <validate-on-match>true</validate-on-match>
+                        <background-validation>true</background-validation>
+                        <background-validation-millis>30000</background-validation-millis>
+                        <exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter"/>
+                    </validation>
+                    <timeout>
+                        <blocking-timeout-millis>60000</blocking-timeout-millis>
+                        <idle-timeout-minutes>15</idle-timeout-minutes>
+                    </timeout>
+                    <statement>
+                        <track-statements>nowarn</track-statements>
+                        <prepared-statement-cache-size>20</prepared-statement-cache-size>
+                        <share-prepared-statements>true</share-prepared-statements>
+                    </statement>
+                </datasource>
