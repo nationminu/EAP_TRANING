@@ -1,0 +1,19 @@
+# Labs09_01
+## Perm size , Heap size 변경 
+
+env.sh 에서 아래 와 같이 변경
+
+```
+...
+# JVM Options : Memory
+export JAVA_OPTS=" $JAVA_OPTS -Xms1024m"             # Xms256m 로 변경  
+export JAVA_OPTS=" $JAVA_OPTS -Xmx1024m"             # Xmx512m 로 변경  
+export JAVA_OPTS=" $JAVA_OPTS -XX:PermSize=256m"            # PermSize=128m 로 변경  
+export JAVA_OPTS=" $JAVA_OPTS -XX:MaxPermSize=256m"         # MaxPermSize=128 로 변경  
+...
+
+```
+JBoss 재기동 
+
+./status.sh 를 실행 하여 변경 되었는지 확인 
+
